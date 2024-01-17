@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import ItemData from './ItemData';
 import ItemRateDetails from "./ItemRateDetails"

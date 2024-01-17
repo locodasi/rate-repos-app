@@ -15,13 +15,6 @@ const styles = StyleSheet.create({
   conten: {
     width: '100%', // Ocupa todo el ancho del contenedor
     marginBottom: 16, // Espaciado inferior entre inputs
-  },
-  input:{
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,    
-    paddingHorizontal: 8,
-    borderRadius: 5
   }
 });
 
@@ -36,7 +29,6 @@ const FormikTextInput = ({ name, ...props }) => {
         onBlur={() => helpers.setTouched(true)}
         value={field.value}
         error={showError}
-        style={styles.input}
         {...props}
       />
       {showError && <Text style={styles.errorText}>{meta.error}</Text>}

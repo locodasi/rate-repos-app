@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, View, Platform } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 import { Route, Routes } from 'react-router-native';
 
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
-import SignIn from './SigIn';
+import SignIn from './SignIn';
 
 import theme from '../theme';
 
@@ -60,7 +60,6 @@ const Main = () => {
         <Route path='/' exact element={<RepositoryList />} />
         <Route path='/signin' exact element={<SignIn />} />
       </Routes>     
-      <Text>{Platform.select({android:"hola",default:"adios"})}</Text>
     </View>
   );
 };
