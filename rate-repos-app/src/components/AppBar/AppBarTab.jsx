@@ -3,6 +3,10 @@ import { Link } from "react-router-native";
 
 import Text from "../customComps/Text"
 
+import AuthStorageContext from '../../contexts/AuthStorageContext';
+import { useContext } from 'react';
+import { useApolloClient } from "@apollo/client";
+
 const styles = StyleSheet.create({
     flexItem: {
       margin: 5,
@@ -12,9 +16,10 @@ const styles = StyleSheet.create({
     },
   });
 
-const AppBarTab = ({ url, children}) => {
+
+const AppBarTab = ({ url, children, logout}) => {
     return (
-      <Link to={url}>
+      <Link to={url} onPress={logout}>
           <Text style={styles.flexItem}>{children}</Text>
       </Link>  
     )

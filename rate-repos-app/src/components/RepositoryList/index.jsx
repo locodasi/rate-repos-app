@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-import { gql, useQuery } from '@apollo/client';
 
 const RepositoryList = () => {
 

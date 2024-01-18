@@ -18,9 +18,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const FormikTextInput = ({ name, ...props }) => {
+const FormikTextInput = ({ name, error, ...props }) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.touched && meta.error;
+  
+  const aplyErrorStyle = error || showError;
 
   return (
     <View style={styles.conten}>
@@ -28,7 +30,7 @@ const FormikTextInput = ({ name, ...props }) => {
         onChangeText={value => helpers.setValue(value)}
         onBlur={() => helpers.setTouched(true)}
         value={field.value}
-        error={showError}
+        error={aplyErrorStyle}
         {...props}
       />
       {showError && <Text style={styles.errorText}>{meta.error}</Text>}

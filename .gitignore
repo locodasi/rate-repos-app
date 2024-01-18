@@ -33,3 +33,9 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+#Back
+.env
+node_modules
+.DS_Store
+database.sqlite

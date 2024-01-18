@@ -1,9 +1,11 @@
-import { View } from "react-native"
+import { View, Text } from "react-native"
 
 import FormikTextInput from "../customComps/FormikTextInput"
 import Button from "../customComps/Button";
 
 import { StyleSheet } from 'react-native';
+
+import theme from "../../theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -14,16 +16,21 @@ const styles = StyleSheet.create({
     form: {
       marginTop: 20,
       alignItems: 'center',
+    },
+    errorMessage: {
+      color:theme.colors.error,
+      marginBottom: 8
     }
   });
 
-const SignInForm = ({onSubmit}) => {
+const SignInForm = ({onSubmit, error}) => {
 
     return (
         <View style={styles.container}>
             <View style={styles.form}>
-                <FormikTextInput name="username" placeholder="Username"/>
-                <FormikTextInput  name="password" placeholder="Password"  secureTextEntry={true}/>
+                {error && <Text style={styles.errorMessage}>{error}</Text>}
+                <FormikTextInput name="username" placeholder="Username" error={error}/>
+                <FormikTextInput  name="password" placeholder="Password"  secureTextEntry={true} error={error}/>
                 <Button onPress={onSubmit}>
                     Sign in
                 </Button>               
