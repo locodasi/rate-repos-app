@@ -1,9 +1,10 @@
-import ApolloClient from 'apollo-boost';
+import {ApolloClient, InMemoryCache} from '@apollo/client';
 
 const createApolloClient = () => {
   return new ApolloClient({
     // Replace the IP address part with your own IP address!
-    uri: 'http://192.168.0.44:4000/graphql',
+    uri: "http://192.168.0.44:4000/graphql",
+    cache: new InMemoryCache()
   });
 };
 

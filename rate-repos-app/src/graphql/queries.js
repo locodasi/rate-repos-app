@@ -5,6 +5,7 @@ query{
     repositories {
         edges {
           node {
+            id
             fullName
             description
             language

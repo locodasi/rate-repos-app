@@ -8,9 +8,12 @@ import { StrictMode } from 'react';
 import { NativeRouter } from 'react-router-native';
 import { ApolloProvider } from '@apollo/client';
 
+import Constants from 'expo-constants';
+
 const apolloClient = createApolloClient();
 
 const App = () => {
+  console.log(Constants.expoConfig);
   return (
     <StrictMode>
       <NativeRouter>

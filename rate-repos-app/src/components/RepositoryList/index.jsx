@@ -12,10 +12,15 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
+import { gql, useQuery } from '@apollo/client';
+
 const RepositoryList = () => {
 
+  const {repositories, loading} = useRepositories();
 
-  const {repositories} = useRepositories();
+  if(loading){
+    return(<></>)
+  }
 
   const repositoryNodes = repositories
     ? repositories.edges.map(edge => edge.node)
