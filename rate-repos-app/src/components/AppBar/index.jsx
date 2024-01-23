@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, StyleSheet, ScrollView} from 'react-native';
 import Constants from 'expo-constants';
 import { useQuery, useApolloClient } from '@apollo/client';
@@ -7,7 +7,7 @@ import {ME} from "../../graphql/queries";
 import theme from '../../theme';
 import AppBarTab from './AppBarTab';
 
-import AuthStorageContext from '../../contexts/AuthStorageContext';
+import {useAuthStorage} from '../../contexts/AuthStorageContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,7 +24,7 @@ const AppBar = () => {
     fetchPolicy: "cache-and-network"
   });
 
-  const authStorage = useContext(AuthStorageContext);
+  const authStorage = useAuthStorage();
   const apolloClient = useApolloClient();
 
   const logOut = async () => {
@@ -36,7 +36,21 @@ const AppBar = () => {
     <View style={styles.container}>
       <ScrollView horizontal>
         <AppBarTab url="/">Repositorie</AppBarTab>
-        {(data && data.me) ? <AppBarTab url="/signin" logout={logOut}>Log out</AppBarTab> : <AppBarTab url="/signin">Sign in</AppBarTab> }      
+        {(data && data.me) ? (
+          <>
+            <AppBarTab url="/review">Create a review</AppBarTab>
+            <AppBarTab url="/myreviews">My reviews</AppBarTab>
+            <AppBarTab url="/signin" logout={logOut}>Log out</AppBarTab>
+          </>
+        )
+         :
+         (
+          <>
+            <AppBarTab url="/signin">Sign in</AppBarTab>  
+            <AppBarTab url="/signup">Sign up</AppBarTab>  
+          </>
+         )}
+             
       </ScrollView>
     </View>
   )

@@ -16,10 +16,17 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
   },
+  colorDangerous: {
+    backgroundColor: theme.colors.error,
+  },
 });
 
-const Button = ({ children, style, ...props }) => {
-  const buttonStyle = [styles.container, style];
+const Button = ({ children, style, background, ...props }) => {
+  const buttonStyle = [
+    styles.container, 
+    background === 'dangerous' && styles.colorDangerous,
+    style
+  ];
 
   return (
     <TouchableWithoutFeedback {...props}>

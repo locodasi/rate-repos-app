@@ -1,6 +1,6 @@
 import {StyleSheet, View} from "react-native"
 
-import Text from "../customComps/Text"
+import Text from "../../customComps/Text"
 
 const styles = StyleSheet.create({
     item: {

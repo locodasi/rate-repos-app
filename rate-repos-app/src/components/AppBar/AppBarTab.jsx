@@ -3,9 +3,6 @@ import { Link } from "react-router-native";
 
 import Text from "../customComps/Text"
 
-import AuthStorageContext from '../../contexts/AuthStorageContext';
-import { useContext } from 'react';
-import { useApolloClient } from "@apollo/client";
 
 const styles = StyleSheet.create({
     flexItem: {

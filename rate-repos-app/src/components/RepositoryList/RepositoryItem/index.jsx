@@ -12,11 +12,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const RepositoryItem = ({item}) => {
+const RepositoryItem = ({item , button}) => {
     return(
         <View style={styles.container}>
           <ItemData item={item} />
           <ItemRateDetails item={item} />
+          {button}
         </View>
     )
 }
