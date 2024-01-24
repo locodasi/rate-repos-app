@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 
 export const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryListContainer = ({repositories, compHeader, onEndReach}) => {
+export const RepositoryListContainer = ({repositories, compHeader, onEndReach}) => {
 
   const navigate = useNavigate();
   const repositoryNodes = repositories
