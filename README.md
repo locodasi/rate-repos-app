@@ -1,7 +1,7 @@
-Rate Repository API
+## **Rate Repository API**
 This is a Rate Repository application with her GraphQL API.
 
-🚀 Getting started
+## **🚀 Getting started**
 Clone this repository and run `npm install in both repository directorys`.
 
 Rate Repository API uses the GitHub API, which has a quite small rate limit (60 requests per hour) for unauthorized requests. Therefore, we need to register it as an OAuth application to obtain client credentials. Register your OAuth application here by setting "Application name" as "Rate Repository API", "Homepage URL" as https://github.com/Kaltsoon/rate-repository-api and "Authorization callback URL" as http://localhost:5000. Now you should see your application here and by going to the application's page, see the "Client ID" and "Client Secret" values.
@@ -26,7 +26,7 @@ PORT=5001
 ```
 Change also the Authorization callback URL here to have the new port value.
 
-🔑 Authentication
+## **🔑 Authentication**
 To list all the registered users, you can run this query in the Apollo Sandbox:
 ```
 {
@@ -67,7 +67,7 @@ A handy way to authorize requests in the Apollo Sandbox is to retrieve an access
 ```
 Replace the `<ACCESS_TOKEN>` part with your access token.
 
-📖 Documentation
+## **📖 Documentation**
 Apollo Sandbox offers documentation on how to use the API. Start the server by running `npm start`, open the Apollo Sandbox at http://localhost:4000 and you should be able to see the documentation next to the operations editor.
 
 after in the rate-repos-app run npm start and enjoy de app!
