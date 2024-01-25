@@ -16,8 +16,9 @@ All done! Just run npm start to start the server. After the server has started y
 
 NOTE The port 5000 might be reserved in new macOS versions. If you see this error
 
-```python
+```
 Error: listen EADDRINUSE: address already in use :::5000
+```
 define an alternative port in file .env. You may eg. pick 5001:
 
 PORT=5001
