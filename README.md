@@ -1,6 +1,6 @@
 Rate Repository API
 This is a Rate Repository application with her GraphQL API.
-`<span style="background-color: #f2f2f2; padding: 2px; border-radius: 4px; box-shadow: 2px 2px 5px #888888;">Palabra destacada</span>`
+`hola`
 🚀 Getting started
 Clone this repository and run **npm install in both repository directorys**.
 
